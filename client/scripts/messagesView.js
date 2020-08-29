@@ -5,19 +5,17 @@
 
 
 // add it into id=chatBox
-class MessagesView {
+var MessagesView = {
 
-  constructor() {
-    this.$chats = $('#chats');
-  }
+  $chats: $('#chats'),
 
-  initialize() {
+  initialize: function() {
     //remove
     // recall all the previous messages and place them back in
-  }
+  },
 
-  render() {
+  render: function() {
     //render entire chatbox through underscore method
   }
 
-}
+};

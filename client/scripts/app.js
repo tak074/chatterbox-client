@@ -1,13 +1,10 @@
-class App {
+var App = {
 
-  constructor() {
+  $spinner: $('.spinner img'),
 
-    this.$spinner = $('.spinner img');
+  username: 'anonymous',
 
-    this.username = 'anonymous';
-  }
-
-  initialize() {
+  initialize: function() {
     App.username = window.location.search.substr(10);
 
     FormView.initialize();
@@ -18,24 +15,24 @@ class App {
     App.startSpinner();
     App.fetch(App.stopSpinner);
 
-  }
+  },
 
-  fetch (callback = ()=>{}) {
+  fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
       // examine the response from the server request:
       console.log(data); //display it in the chatbox
 
       callback();
     });
-  }
+  },
 
-  startSpinner() {
+  startSpinner: function() {
     App.$spinner.show();
     FormView.setStatus(true);
-  }
+  },
 
-  stopSpinner() {
+  stopSpinner: function() {
     App.$spinner.fadeOut('fast');
     FormView.setStatus(false);
   }
-}
+};

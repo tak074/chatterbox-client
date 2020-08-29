@@ -1,21 +1,19 @@
 //button to expand room options
-class RoomsView {
+var RoomsView = {
   //keep track of room options
   ////if you click the option, open a chatBox of that subclass.
   //////initialize the current chatRoom, and load up the current room chat data via parse.readAll.
 
-  constructor() {
-    this.$button = $('#rooms button');
-    this.$select = $('#rooms select');
-  }
+  $button: $('#rooms button'),
+  $select: $('#rooms select'),
 
-  initialize() {
+  initialize: function() {
     //remove all rooms from the option
-  }
+  },
 
-  render() {
+  render: function() {
     //render whenever 'Add Room'
     //render through underscore method
   }
 
-}
+};

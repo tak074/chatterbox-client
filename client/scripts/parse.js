@@ -1,10 +1,8 @@
-class Parse {
+var Parse = {
 
-  constructor() {
-    this.server = `http://parse.${window.CAMPUS}.hackreactor.com/chatterbox/classes/messages`;
-  }
+  server: `http://parse.${window.CAMPUS}.hackreactor.com/chatterbox/classes/messages`,
 
-  create (message, successCB, errorCB = null) {
+  create: function(message, successCB, errorCB = null) {
     // todo: save a message to the server
     //// 'POST'
     $.ajax({
@@ -17,10 +15,9 @@ class Parse {
         console.error('chatterbox: Failed to fetch messages', error);
       }
     });
-  }
+  },
   //retrieves messages from the server
-
-  readAll (successCB, errorCB = null) {
+  readAll: function(successCB, errorCB = null) {
     $.ajax({
       url: Parse.server,
       type: 'GET',
@@ -33,7 +30,7 @@ class Parse {
     });
   }
 
-}
+};
 
 /*
   const ajax = (obj) => {

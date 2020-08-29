@@ -1,13 +1,10 @@
 //sub-class of the chatRoom
 
-class Rooms {
+var Rooms = {
   //roomName
 
-  constructor() {
 
-  }
-
-}
+};
 
 //Add Room should add new room option to the <select id = roomList></select>
 //check script tag, url.
