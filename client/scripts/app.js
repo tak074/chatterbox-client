@@ -22,8 +22,8 @@ var App = {
     Parse.readAll((data) => {
       // examine the response from the server request:
       console.log(data);
-      $( '#chats' ).append(data); //display it in the chatbox
-
+      // feed data.results into messagesView
+      MessagesView.render(data.results);
       callback();
     });
   },

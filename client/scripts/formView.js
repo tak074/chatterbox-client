@@ -25,8 +25,8 @@ var FormView = {
     Parse.create(message, successCB, errorCB);
 
     //put text into the chats
-    // MessagesView.renderMessage(message.text);
-    $('#chats').append(message.text);
+    var newMessage = messageView.render(message);
+    $('#chats').append(newMessage);
     // Stop the browser from submitting the form
     event.preventDefault();
     // submit the message.

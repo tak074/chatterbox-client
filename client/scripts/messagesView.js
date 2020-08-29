@@ -15,12 +15,23 @@ var MessagesView = {
     // var failCB = function() { console.log('error'); };
     // var prevChat = Parse.readAll(successCB, failCB);
     // $( '#chats' ).append(prevChat);
-    //console.log(Parse.readAll(function() { console.log('readAll:'); }));
+
   },
 
-  render: function(message) {
+
+  render: function(data) {
     //render entire chatbox through underscore method
-    return messageView.render(message);
+    for (let i = 0; i < data.length; i++) {
+      let tempMessageObject = {
+        username: xssKiller.escape(data[i].username),
+        text: xssKiller.escape(data[i].text),
+        roomname: xssKiller.escape(data[i].roomname)
+      };
+      console.log(tempMessageObject);
+      newMessage = MessageView.render(tempMessageObject);
+      $('#chats').append(newMessage);
+    }
+    return messageView.render(data);
   }
 
 };
