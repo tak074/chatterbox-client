@@ -1,21 +1,36 @@
-var FormView = {
+//submit button
 
-  $form: $('form'),
+class FormView {
 
-  initialize: function() {
+  constructor() {
+    $form: $('form');
+  }
+
+  initialize() {
     FormView.$form.on('submit', FormView.handleSubmit);
-  },
+  }
 
-  handleSubmit: function(event) {
+  handleSubmit(event) {
+    //can invoke through pressing enter(?)
+    $('.submit').on('click', (event) => {
+      var userName = window.location.search.slice(10);
+      var text = $('#message').val();
+      var roomName = 'lobby'; //comeback to change this
+
+
+    });
+
     // Stop the browser from submitting the form
     event.preventDefault();
-    
-    console.log('click!');
-  },
+    // submit the message.
+    //initiate conten of messages -> messageView -> messagesView.
 
-  setStatus: function(active) {
+    console.log('click!');
+  }
+
+  setStatus(active) {
     var status = active ? 'true' : null;
     FormView.$form.find('input[type=submit]').attr('disabled', status);
   }
-
-};
+//check script tag. url
+}
