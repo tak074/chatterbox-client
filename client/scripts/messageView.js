@@ -2,13 +2,10 @@
 //goes into messagesView.js
 
 var MessageView = {
-
-  render: _.template(`
-      <!--
-      <div class="chat">
-        <div class="username"></div>
-        <div></div>
-      -->
-    `)
-
+  render: _.template(
+    '<div class="chat">' +
+      '<div class="username"><%= userName %></div>' +
+      '<div><%= text %></div>' +
+    '</div>'
+  )
 };

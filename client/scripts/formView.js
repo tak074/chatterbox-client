@@ -15,7 +15,7 @@ var FormView = {
     let roomName = 'lobby'; //comeback to change this
 
     let message = new Message(userName, text, roomName);
-
+    //send message to the server
     const successCB = () => {
       console.log('created');
     };
@@ -24,12 +24,16 @@ var FormView = {
     };
     Parse.create(message, successCB, errorCB);
 
+    //put text into the chats
+    // MessagesView.renderMessage(message.text);
+    $('#chats').append(message.text);
     // Stop the browser from submitting the form
     event.preventDefault();
     // submit the message.
     //initiate conten of messages -> messageView -> messagesView.
 
     console.log('click!');
+    $('#message').val('');
   },
 
   setStatus: function(active) {

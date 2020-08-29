@@ -2,6 +2,7 @@ var App = {
 
   $spinner: $('.spinner img'),
 
+
   username: 'anonymous',
 
   initialize: function() {
@@ -20,7 +21,8 @@ var App = {
   fetch: function(callback = ()=>{}) {
     Parse.readAll((data) => {
       // examine the response from the server request:
-      console.log(data); //display it in the chatbox
+      console.log(data);
+      $( '#chats' ).append(data); //display it in the chatbox
 
       callback();
     });
