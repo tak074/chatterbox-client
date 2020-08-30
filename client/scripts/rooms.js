@@ -3,7 +3,13 @@
 var Rooms = {
   //roomName
 
+  addRoom: function(event) {
+    $('#addRoom').on('click', function() {
+      console.log('hola');
+    });
+    console.log('onion');
 
+  }
 };
 
 //Add Room should add new room option to the <select id = roomList></select>

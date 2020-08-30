@@ -1,7 +1,7 @@
 //components inside the input box
 //this will go through messageView.js
 var Message = function(userName, text, roomName) {
-  this.userName = xssKiller.escape(userName);
+  this.username = xssKiller.escape(userName);
   this.text = xssKiller.escape(text);
-  this.roomName = xssKiller.escape(roomName);
+  this.roomname = xssKiller.escape(roomName);
 };

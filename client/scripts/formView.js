@@ -25,8 +25,15 @@ var FormView = {
     Parse.create(message, successCB, errorCB);
 
     //put text into the chats
-    var newMessage = messageView.render(message);
+    let tempMessageObject = {
+      username: xssKiller.escape(message.username),
+      text: xssKiller.escape(message.text),
+      roomname: xssKiller.escape(message.roomname)
+    };
+    let newMessage = MessageView.render(tempMessageObject);
     $('#chats').append(newMessage);
+
+
     // Stop the browser from submitting the form
     event.preventDefault();
     // submit the message.
